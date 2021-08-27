@@ -220,7 +220,7 @@ def get_forge_pods_by_phase(context, phase):
                 "--selector=app.kubernetes.io/name=forge",
                 f"--field-selector=status.phase=={phase}",
             ],
-            stderr=subprocess.DEVNULL,
+            stderr=subprocess.STDOUT,
             encoding="UTF-8",
         )
     )

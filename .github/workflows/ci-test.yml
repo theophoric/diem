@@ -991,6 +991,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
+            let env_vars = process.env;
             // Fail the workflow if test fails or perf regresses
             if (parseInt(env_vars.FGI_EXIT_CODE) != 0) {
               throw "Land-blocking test failed";
